@@ -1,0 +1,54 @@
+Added File from JS Folder
+
+= PlayerSelection
+Select a Square:
+1.) TopLeft
+2.) TopCenter
+3.) TopRight
+
+4.) MiddleLeft
+5.) MiddleCenter
+6.) MiddleRight
+
+7.) BottomLeft
+8.) BottomCenter
+9.) BottomRight
+
+=PlayerInput
+X or O:
+1.) X
+2.) O
+
+Notation:
+TopLeft     (1,1) TopCenter    (1,2)  TopRight    (1,3)
+MiddleLeft  (2,1) MiddleCenter (2,2)  MiddleRight (2,3)
+BottomeLeft (3,1) BottomCenter (3,2)  BottomRight (3,3)
+
+Computer, Draw X at (1,1)
+Result:
+print("X| | ")
+print("-|-|-")
+print(" | | ")
+print("-|-|-")
+print(" | | ")
+Computer, Draw O at (2,2)
+Result:
+print(" X| |  ")
+print(" -|-|- ")
+print("  |O|  ")
+print(" -|-|- ")
+print("  | |  ")
+
+Logic:
+print("  | |  ")
+Computer Sees a list/array
+TopRow = print("0123456")
+for i in PlayerSelection replace with PlayerInput;
+
+Board{
+print("  | |  ")
+print(" -|-|- ")
+print("  | |  ")
+print(" -|-|- ")
+print("  | |  ")
+}
