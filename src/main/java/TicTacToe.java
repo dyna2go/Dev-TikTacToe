@@ -1,24 +1,29 @@
 import java.util.Scanner;
+import java.util.Random;
 public class TicTacToe {
     public static void main(String[] args) {
-            //Board
-            char[][] gameBoard = {
-                    {' ', '|', ' ', '|', ' '},
-                    {'-', '+', '-', '+', '-'},
-                    {' ', '|', ' ', '|', ' '},
-                    {'-', '+', '-', '+', '-'},
-                    {' ', '|', ' ', '|', ' '},};
-
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Enter your placement");
-        int pos = scan.nextInt();
-
-        System.out.println(pos);
-
-        placePiece(gameBoard, pos, "player");
-
+        //Board
+        char[][] gameBoard = {
+                {' ', '|', ' ', '|', ' '},
+                {'-', '+', '-', '+', '-'},
+                {' ', '|', ' ', '|', ' '},
+                {'-', '+', '-', '+', '-'},
+                {' ', '|', ' ', '|', ' '},};
         printGameBoard(gameBoard);
 
+        while (true) {
+            Scanner scan = new Scanner(System.in);
+            System.out.println("Enter your placement (1-9):");
+            int playerPos = scan.nextInt();
+
+            placePiece(gameBoard, playerPos, "player");
+
+            Random rand = new Random();
+            int cpuPos = rand.nextInt(9) + 1;
+            placePiece(gameBoard, cpuPos, "cpu");
+
+            printGameBoard(gameBoard);
+        }
     }
     public static void printGameBoard(char[][] gameBoard){
         for(char[] row : gameBoard) {
@@ -35,7 +40,6 @@ public class TicTacToe {
         } else if (user.equals("cpu")){
             symbol = 'O';
         }
-
 
         switch(pos){
             case 1:
